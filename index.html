@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/3477ae541c.js" crossorigin="anonymous"></script>
+	<title>Card Hover Effect</title>
+
+	<link rel="stylesheet" href="style.css">
+	 <style>
+        .heading{
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+			font-family: 'Ms Madi', 'Square Peg', sans-serif;
+            font-size: 100px;
+        }
+        .description {
+            position: absolute;
+            top: 150px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(33, 33, 32, 0.67); /* Semi-transparent white */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">Meowcha Cafe</div> <!-- Moving heading -->
+    <div class="description">
+		<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Square+Peg&size=22&duration=4000&color=F2F7BA&center=true&vCenter=true&multiline=true&random=false&width=500&height=100&lines=where+cats+and+matcha+collide+for+a+unique+and+cozy+experience.+Sip+on+our+selection;+of+matcha+delights+while+enjoying+the+company+of+our+adorable+resident+felines.;++It's+a+purrfect+blend+of+relaxation+and+delight+in+every+cup!" alt="Typing SVG" /></a>
+	</div> <!-- Description -->
+	<div class="wrapper">
+		<div class="card" data-target="p-1">
+			<img src="images/img1.jpg" alt="">
+			<div class="info">
+				<h1>Meowcha Latte</h1>
+				<p>A cozy drink made with creamy matcha and frothy milk for a purrfect treat</p>
+				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
+			</div>
+		</div>
+		<div class="card" data-target="p-2">
+			<img src="images/img2.jpg" alt="">
+			<div class="info">
+				<h1>Kitty Bun delights</h1>
+				<p>fluffy buns filled with irresistible flavors that will make your taste buds purr with delight</p>
+				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
+			</div>
+		</div>
+		<div class="card" data-target="p-3">
+			<img src="images/img3.jpg" alt="">
+			<div class="info">
+				<h1>Meowfins</h1>
+				<p>delightful Meow Muffins, fluffy cupcakes bursting with flavor that will have you feline fine with every bite</p>
+				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
+			</div>
+		</div>
+		<div class="card" data-target="p-4">
+			<img src="images/img4.jpg" alt="">
+			<div class="info">
+				<h1>Catpuccino</h1>
+				<p>Catpuccino coffee, a purrfect blend of espresso and frothy milk that will whisk you away to caffeine bliss.</p>
+				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
+			</div>
+		</div>
+	</div>
+
+	<div class="menu-preview"> <!-- products-preview -->
+
+		<div class="preview" data-target="p-1">
+			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
+		   <img src="images/img1.1.jpg" alt=""> <!-- Corrected image path -->
+		   <h3>Meowcha Latte ฅ^._.^ฅ</h3> <!-- Corrected closing tag -->
+		   <div class="stars">
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star-half-alt"></i>
+		   </div>
+		   <p>"Sip on our Meowcha Matcha Latte, a creamy concoction of rich matcha and steamed milk, topped with a frothy foam whisker for a delightful pick-me-up."</p>
+		   <div class="price">Php 145.00</div>
+		   <a href="#" class="buy">order now</a>
+		</div>
+	 
+		<div class="preview" data-target="p-2">
+			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
+		   <img src="images/img2.1.jpg" alt=""> <!-- Corrected image path -->
+		   <h3>Meowfins </h3> <!-- Corrected closing tag -->
+		   <div class="stars">
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  <i class="fas fa-star"></i>
+			  
+		   </div>
+		   <p>"Satisfy your cravings with our Kitty Bun Delights, featuring a variety of fluffy buns filled with delicious fillings, sure to make your taste buds purr with delight. From savory to sweet, there's a Kitty Bun for every palate, making it the perfect snack for any time of day."</p>
+		   <div class="price">$2.00</div>
+		   <a href="#" class="buy">order now</a>
+		</div>
+	 
+		<div class="preview" data-target="p-3">
+			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
+			<img src="images/img3.jpg" alt=""> <!-- Corrected image path -->
+			<h3>fresh coffee</h3> <!-- Corrected closing tag -->
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+			<div class="price">$2.00</div>
+			<a href="#" class="buy">order now</a>
+		</div>  
+	 
+		<div class="preview" data-target="p-4">
+			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
+			<img src="images/img4.1.jpg" alt=""> <!-- Corrected image path -->
+			<h3>Catpuccino </h3> <!-- Corrected closing tag -->
+			<div class="stars">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+				
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+			<div class="price">$2.00</div>
+			<a href="#" class="buy">order now</a>
+		</div> 			
+	</div>
+	<script src="script.js"></script>
+	
+</body>
+
+
+<style>
+	.audio-button {
+		position: fixed;
+		bottom: 20px;
+		left: 20px;
+		background-color: #1d402b;
+		border: none;
+		border-radius: 50%;
+		padding: 10px;
+		color: #ffffff;
+		font-size: 15px;
+		cursor: pointer;
+	}
+</style>
+
+<button class="audio-button" onclick="playAudio()"><i class="fas fa-volume-up"></i></button>
+
+</html>
+<audio id="myAudio">
+    <source src="misty.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+</html>
