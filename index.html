@@ -1,167 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://kit.fontawesome.com/3477ae541c.js" crossorigin="anonymous"></script>
-	<title>Card Hover Effect</title>
 
-	<link rel="stylesheet" href="assets/CSS/style.css">
-	 <style>
-        .heading{
-            position: absolute;
-            top: 20px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ffffff;
-			font-family: 'Ms Madi', 'Square Peg', sans-serif;
-            font-size: 100px;
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Eyuewna's Portfolio Hub</title>
+</head>
+<body>
+    <!----------sound change color---------->
+
+    <style>
+        .sound-icon {
+            margin-left: 60px; 
+            cursor: pointer;
+            color: yellow;
         }
-        .description {
-            position: absolute;
-            top: 150px; 
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(33, 33, 32, 0.67); /* Semi-transparent white */
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
+        .sound-icon.clicked {
+            color: rgb(43, 47, 176);
         }
     </style>
 </head>
 <body>
-    <div class="heading">Meowcha Cafe</div> <!-- Moving heading -->
-    <div class="description">
-		<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Square+Peg&size=22&duration=4000&color=F2F7BA&center=true&vCenter=true&multiline=true&random=false&width=500&height=100&lines=where+cats+and+matcha+collide+for+a+unique+and+cozy+experience.+Sip+on+our+selection;+of+matcha+delights+while+enjoying+the+company+of+our+adorable+resident+felines.;++It's+a+purrfect+blend+of+relaxation+and+delight+in+every+cup!" alt="Typing SVG" /></a>
-	</div> <!-- Description -->
-	<div class="wrapper">
-		<div class="card" data-target="p-1">
-			<img src="assets/images/img1.jpg" alt="">
-			<div class="info">
-				<h1>Meowcha Latte</h1>
-				<p>A cozy drink made with creamy matcha and frothy milk for a purrfect treat</p>
-				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
-			</div>
-		</div>
-		<div class="card" data-target="p-2">
-			<img src=""assets/images/img2.jpg" alt="">
-			<div class="info">
-				<h1>Kitty Bun delights</h1>
-				<p>fluffy buns filled with irresistible flavors that will make your taste buds purr with delight</p>
-				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
-			</div>
-		</div>
-		<div class="card" data-target="p-3">
-			<img src=""assets/images/img3.jpg" alt="">
-			<div class="info">
-				<h1>Meowfins</h1>
-				<p>delightful Meow Muffins, fluffy cupcakes bursting with flavor that will have you feline fine with every bite</p>
-				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
-			</div>
-		</div>
-		<div class="card" data-target="p-4">
-			<img src=""assets/images/img4.jpg" alt="">
-			<div class="info">
-				<h1>Catpuccino</h1>
-				<p>Catpuccino coffee, a purrfect blend of espresso and frothy milk that will whisk you away to caffeine bliss.</p>
-				<a href="#" class="btn menu">Read More</a> <!-- Added class "menu" -->
-			</div>
-		</div>
-	</div>
+    <!----------header---------->
+    <header>
+        <div class="content">
+            <div class="left-header">
+                <div class="music-player">
+                    <audio id="music" src="sounds/saturn.mp3"></audio>
+                    <i class="fas fa-music sound-icon" onclick="toggleMusic()" id="sound-icon"></i>
+                </div>
+                <div class="logo">
+                    <img src="assets/images/caticon.png" alt="logo" style="width: 70px; height: 50px;">
+                </div>
+                
+                <!-- Music Player -->
+            </div>
+            <div class="right-header">
+                <nav>
+                    <ul>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#collection-carders">My Projects</a></li>
+                        <li><a href="https://eyuewna.github.io/Angeles-Resume/#Education" target="_blank">Resume</a></li>
+                        <li><a href="#FAQ">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-	<div class="menu-preview"> <!-- products-preview -->
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById('music');
+            var soundIcon = document.getElementById('sound-icon');
+            if (music.paused) {
+                music.play();
+                soundIcon.classList.add('clicked');
+            } else {
+                music.pause();
+                soundIcon.classList.remove('clicked'); 
+            }
+        }
+    </script>
 
-		<div class="preview" data-target="p-1">
-			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
-		   <img src=""assets/images/img1.1.jpg" alt=""> <!-- Corrected image path -->
-		   <h3>Meowcha Latte ฅ^._.^ฅ</h3> <!-- Corrected closing tag -->
-		   <div class="stars">
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star-half-alt"></i>
-		   </div>
-		   <p>"Sip on our Meowcha Matcha Latte, a creamy concoction of rich matcha and steamed milk, topped with a frothy foam whisker for a delightful pick-me-up."</p>
-		   <div class="price">Php 145.00</div>
-		   <a href="#" class="buy">order now</a>
-		</div>
-	 
-		<div class="preview" data-target="p-2">
-			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
-		   <img src=""assets/images/img2.1.jpg" alt=""> <!-- Corrected image path -->
-		   <h3>Meowfins </h3> <!-- Corrected closing tag -->
-		   <div class="stars">
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  <i class="fas fa-star"></i>
-			  
-		   </div>
-		   <p>"Satisfy your cravings with our Kitty Bun Delights, featuring a variety of fluffy buns filled with delicious fillings, sure to make your taste buds purr with delight. From savory to sweet, there's a Kitty Bun for every palate, making it the perfect snack for any time of day."</p>
-		   <div class="price">$2.00</div>
-		   <a href="#" class="buy">order now</a>
-		</div>
-	 
-		<div class="preview" data-target="p-3">
-			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
-			<img src=""assets/images/img3.jpg" alt=""> <!-- Corrected image path -->
-			<h3>fresh coffee</h3> <!-- Corrected closing tag -->
-			<div class="stars">
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star-half-alt"></i>
-			</div>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-			<div class="price">$2.00</div>
-			<a href="#" class="buy">order now</a>
-		</div>  
-	 
-		<div class="preview" data-target="p-4">
-			<i class="fas fa-times"></i> <!-- Changed class to "fas" -->
-			<img src=""assets/images/img4.1.jpg" alt=""> <!-- Corrected image path -->
-			<h3>Catpuccino </h3> <!-- Corrected closing tag -->
-			<div class="stars">
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star"></i>
-				<i class="fas fa-star-half-alt"></i>
-				
-			</div>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-			<div class="price">$2.00</div>
-			<a href="#" class="buy">order now</a>
-		</div> 			
-	</div>
-	<script src="assets/JS/script.js"></script>
-	
+
+<!----------Collection------------>
+<section class="Collection" id="Collection">
+    <div class="background" id="background"></div>
+    <div class="content">
+        <div class="text">
+            <h1>Eyuewna's Portfolio Hub</h1>
+            <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=1000&color=F7F548&center=true&random=false&width=435&lines=Welcome+to+Eyuewna's+Portfolio+Hub!;+Here%2C+you'll+find+a+concise+showcase+of+;my+work+and+projects.+Take+a+look+around;+to+explore+what+I've+been+up+to.;%E0%B4%A6%E0%B5%8D%E0%B4%A6%E0%B4%BF+%CB%89%CD%88%CC%80%EA%92%B3%CB%89%CD%88%CC%81+)%E2%9C%A7+ENJOYYY!!!!!!!+++++++++++++++++++;%2F%E1%90%A0.+%EF%BD%A1.%E1%90%9F%5C%E1%B5%90%E1%B5%89%E1%B5%92%CA%B7%CB%8E%CB%8A%CB%97" alt="Typing SVG" /></a>
+            <br><a href="#collection-carders" class="button">Browse collection</a>
+        </div>
+    </div>
+</section>
+
+<img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+<img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+
+    <!----------Collection carders------------>
+    <section class="collection-carders" id="collection-carders">
+        <div class="content">
+            <div class="boxes">
+                <div class="card" onclick="window.open('https://eyuewna.github.io/CatCafe-Website/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj1.jpg" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">CatCafe-Website </a></h2>
+                        <span>Mews and brews is cat cafe website where you can enjoy cat-themed drinks and meet our resident cats. Built with HTML, CSS, and Bootstrap, it's easy to navigate.</span>
+                    </div>
+
+                </div>
+                <div class="card card-2" onclick="window.open('https://eyuewna.github.io/Angeles-Calculator/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj2.gif" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">Angeles-Calculator</a></h2>
+                        <span>A simple calculator featuring essential arithmetic operations, and clear functionality. The user-friendly interface includes a history display and output area for easy calculation.
+                        </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://eyuewna.github.io/Bell_Notification/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj3.jpg" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">Bell Notification</a></h2>
+                        <span>This program is a bell notification with a twist. Click the button to ring the bell, but after the 19th ring, be prepared for a jumpscare! It's a suspenseful way to spice up your notifications.
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="card card-2" onclick="window.open('https://eyuewna.github.io/Jumping_Letters/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj4.gif" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">Jumping Letters</a></h2>
+                        <span>By An interactive web program built using HTML, CSS, and JavaScript. It showcases jumping letters, With just a click, you can watch as letters on the screen bounce and jump.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://eyuewna.github.io/AWD-Animation-project/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj5.gif" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">AWD-Animation-project</a></h2>
+                        <span>A music player that features moving title and displays album covers linked to audio tracks. I can control the volume and switch between songs using the player interface.
+
+                        </span>
+                    </div>
+
+                </div>
+                <div class="card card-2" onclick="window.open('https://eyuewna.github.io/Color_Switching/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj6.jpg" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">Color-Switching</a></h2>
+                        <span>My program is a color-switching button using HTML, CSS, and JavaScript. Clicking the button changes the color of a square dynamically, enhancing user interaction and showcasing front-end technology integration.
+                        </div>
+                </div>
+
+                <div class="card" onclick="window.open('https://eyuewna.github.io/TSA4-MOD5-6/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj7.gif" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">TSA4-CardHover</a></h2>
+                        <span>A program with a Card Hover Effect, a fun way to browse through our menu with descriptions. Easy to use and has options
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="card card-2" onclick="window.open('https://eyuewna.github.io/Jumping_Letters/')">
+                    <div class="card-image">
+                        <img src="assets/images/proj8.png" alt="art">
+                    </div>
+                    <div class="card-text">
+                        <h2><a href="#">Scroll-Indicator</a></h2>
+                        <span> This program includes a scroll indicator crafted with HTML, CSS, and JavaScript. As you scroll, the indicator dynamically shows your position in the content.
+                        </span>
+                    </div>
+                </div>
+
+       
+            </div>
+            <div class="carders-btn">
+                <a href="https://github.com/eyuewna?tab=repositories" class="button">
+                    View more
+                    <i class="fa fa-arrow-right-long"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+
+
+    <!-- ---------about------->
+    <section class="about" id="about">
+        <div class="content">
+            <div class="header-center">
+                <h2 class="text-header">
+                    ABOUT ME
+                </h2>
+            </div>
+            <div class="side-1">
+                <div class="image-section">
+                    <img src="assets/images/eunapic.png" alt="features" class="animated-image">
+                </div>
+
+                <div class="text-section">
+                    <div class="uk-panel">
+                        <span class="span-panel">*ੈ✩༺☆༻*ੈ✩‧₊˚ B I O *ੈ✩˚༺☆༻*ੈ✩‧₊˚</span>
+                        <h3>Hi, Im <span class="blue-text">Euna Gabrielle V. Angeles</span></h3>
+                        <span style="color: rgb(243, 243, 130);">
+                        A 20-year-old 2nd-year BSIT student specializing in Business Analytics, passionate about leveraging technology to drive strategic business decisions and innovation. With a keen interest in data analysis and programming, I aim to become proficient in various programming languages and analytical tools to excel in the field of business analytics and contribute to meaningful projects that positively impact industries.</span>
+                            <div class="row">
+                            <div class="uk-panel">
+                                <h5>Currently Studying At</h5>
+                                <span style="color: rgb(243, 243, 130)">Feu Institute of Technology</span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="side-2">
+                <section class="text-section">
+                    <div class="uk-panel">
+                        <span class="span-panel">ੈ✩༺☆༻*ੈ✩‧₊˚ O T H E R S *ੈ✩˚༺☆༻*ੈ✩‧₊˚</span>
+                        <div class="question-list">
+                            <details>
+                                <summary>💁🏻‍♀️ Pronouns</summary>
+                                <div>
+                                    <p>SHE/ HER
+                                    </p>
+                                </div>
+                            </details>
+                            <!-- Repeat question-list as needed -->
+                                <details>
+                                    <summary>🎂 Birth Date</summary>
+                                    <div>
+                                        <p>November 12, 2003
+                                        </p>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary>💓 Likes</summary>
+                                    <div>
+                                        <p> I enjoy matcha, iced coffees, music, cats, drawing, and programming. I also have a taste for spicy foods.
+                                        </p>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary>💔 DisLikes</summary>
+                                    <div>
+                                        <p>I dislike hot weather, mint, and cockroaches. 🤮
+                                        </p>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary>🤯 Fun Fact</summary>
+                                    <div>
+                                        <p>I have 15 cats! 🐾
+                                        </p>
+                                    </div>
+                                </details>
+                                
+                        </div>
+                        <div class="row">
+                            <div class="box">
+                                <div class="box-icon">
+                                    <i>🎯</i>
+                                </div>
+                                <div class="box-text">
+                                    <span>Professional programmer</span>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="box-icon">
+                                    <i>🎯</i>
+                                </div>
+                                <div class="box-text">
+                                    <span>Data Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="image-section">
+                    <img src="assets/images/pompom.gif" alt="features">
+                </section>
+            </div>
+            
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+
+
+    <!----------counter--------------->
+
+    <div class="header-center">
+        <h2 class="text-header" style="font-size: 50px; color: #e2e675;">
+            Here are some of my artworks >,<
+        </h2>
+    </div>
+    <section class="counter-section">
+        <div class="content">
+            <div class="row">
+                <div class="row-icon">
+                    <img src="assets/images/drawing1.png" alt="Collections">
+                </div>
+                <div class="number"><span>2024</span></div>
+                <h6><33 </h6>
+            </div>
+            <div class="row">
+                <div class="row-icon">
+                    <img src="assets/images/drawing4.png">
+                </div>
+                <div class="number"><span>2023</span></div>
+                <h6>"Random Barista"</h6>
+            </div>
+            <div class="row">
+                <div class="row-icon">
+                    <img src="assets/images/drawing2.png">
+                </div>
+                <div class="number"><span>2022</span></div>
+                <h6>"Self Portrait"</h6>
+            </div>
+            <div class="row">
+                <div class="row-icon">
+                    <i><img src="assets/images/drawing3.png"></i>
+                </div>
+                <div class="number"><span>2021</span></div>
+                <h6>"t'nalak weaver"</h6>
+            </div>
+            
+        </div>
+    </section>
+    </div>
+
+    
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+
+
+    <!--------Cats-------->
+    <section class="team">
+        <div class="content">
+            <div class="header-center">
+                <h2 class="text-header" style="font-size: 50px; color: #f7f7f7;"> Introducing My Babies ฅ/ᐠ˶> ﻌ<˶ᐟ\ฅ
+                </h2>
+            </div>
+            <div class="back-map"></div>
+            <div class="team-card">
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat1.jpg" alt="kimchi">
+                    </div>
+                    <div class="text-card">
+                        <h3>KIMCHI</h3>
+                        <span>First ever cat, aka "The OG"</span>
+                    </div>
+                </div>
+                <div class="card-s4 card-center-up">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat2.jpg" alt="matcha">
+                    </div>
+                    <div class="text-card">
+                        <h3>MATCHA</h3>
+                        <span>A cat that is hated by other cats :,DD </span>
+                    </div>
+                </div>
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat3.jpg" alt="Narra">
+                    </div>
+                    <div class="text-card">
+                        <h3>NARRA/BIANCA</h3>
+                        <span>loudest and clingest cat</span>
+        
+                    </div>
+                </div>
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat4.jpg" alt="Wednesday">
+                    </div>
+                    <div class="text-card">
+                        <h3>WEDNESDAY</h3>
+                        <span>Most Introverted cat, literally Wednesday adams</span>
+                    </div>
+                </div>
+                <div class="card-s4 card-center-up">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat5.jpg" alt="Tyler">
+                    </div>
+                    <div class="text-card">
+                        <h3>TYLER</h3>
+                        <span>An Aromatic cat .-.</span>
+                    </div>
+                </div>
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat6.jpg" alt="Chippy">
+                    </div>
+                    <div class="text-card">
+                        <h3>CHIPPY</h3>
+                        <span>The :PP cat</span>
+                    </div>
+                </div>
+
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat7.jpg" alt="ayame">
+                    </div>
+                    <div class="text-card">
+                        <h3>AYAME</h3>
+                        <span>The Crossed eyed cat</span>
+                    </div>
+                </div>
+
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat8.jpg" alt="asher">
+                    </div>
+                    <div class="text-card">
+                        <h3>ASHER</h3>
+                        <span>Gangster cat</span>
+                    </div>
+                </div>
+
+                <div class="card-s4">
+                    <div class="image-card">
+                        <img class="radius-circle" src="assets/images/cat9.jpg" alt="chiyuu">
+                    </div>
+                    <div class="text-card">
+                        <h3>CHIYUU</h3>
+                        <span>The "Isip Pusa"</span>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 20px; margin-top: 20px; color: rgb(216, 234, 127);">And many other more >,<.........</p>
+
+        </div>
+    </section>
+</section>
+
+
+    <!---------------FAQ------------------>
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+    <img src="assets/images/horizontal-divider-gradient.gif" style="width: 100%; height: auto;">
+
+
+    <section class="FAQ" id="FAQ">
+        <div class="content">
+            <div class="header-center">
+                <h2 class="text-header" style="font-size: 50px; color: #e2e675;">
+                    Contacts
+                </h2>
+        
+            </div>
+            <div class="question-list">
+                <details>
+                    <summary>Dont Hesitate to Call : </summary>
+                    <div>
+                        <p> Phone No: (+63) 9686879616<br>
+                            Tel No: 889-5427
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Communicate via Email : </summary>
+                    <div>
+                        <p>
+                            Personal Email: eunaangeles@gmail.com/eyuewnaangeles@gmail.com<br>
+                            School Email: 202210630@fit.edu.ph
+
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Reach me at :</summary>
+                    <div>
+                        <p>Padre Paredes St, Sampaloc, Manila, 1015 Metro Manila
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </div>
+<!----------------footer------------------->
+<footer>
+    <div class="container">
+        <ul class="social-section">
+            <li><a href="https://github.com/eyuewna"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://web.facebook.com/eunagabriellev.angeles/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/yuuuena/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCrGOfIZZjF0PxsGwPMfOj7Q"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://open.spotify.com/playlist/6L93MSBl6W7JMiLBYafwvm"><i class="fab fa-spotify"></i></a></li>
+        </ul>
+
+        <div class="end-footer">
+            <div>
+                <p class="uk-text-muted"><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=17&duration=3000&pause=1000&color=F7F548&center=true&vCenter=true&random=false&width=435&lines=(%E3%81%A5%CB%B6%E2%80%A2%E0%BC%9D%E2%80%A2%CB%B6)%E3%81%A5%E2%99%A1+Made+by+Euna+Angeles;reach+me+out+on+my+socials+%E1%AF%93%E2%98%85;Thank+yuu+for+viewing+%E0%B8%85%5E+%3E%E3%83%AE%3C%5E%E2%82%8E" alt="Typing SVG" /></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
-
-
-<style>
-	.audio-button {
-		position: fixed;
-		bottom: 20px;
-		left: 20px;
-		background-color: #1d402b;
-		border: none;
-		border-radius: 50%;
-		padding: 10px;
-		color: #ffffff;
-		font-size: 15px;
-		cursor: pointer;
-	}
-</style>
-
-<button class="audio-button" onclick="playAudio()"><i class="fas fa-volume-up"></i></button>
-
 </html>
-<audio id="myAudio">
-    <source src="assests/misty.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+
+</body>
 
 </html>
