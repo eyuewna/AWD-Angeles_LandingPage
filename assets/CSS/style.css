@@ -130,7 +130,7 @@ header .right-header nav ul li a:hover {
 }
 
 .Collection .background {
-    background-image: url("images/Bgimage.jpg");
+    background-image: url("assets/images/Bgimage.jpg");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -477,7 +477,7 @@ header .right-header nav ul li a:hover {
     left: 0;
     right: 0;
     z-index: -1;
-    background-image: url("images/map.svg");
+    background-image: url("assets/images/map.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -727,7 +727,7 @@ details[open] div {
 
 /* ----------------------footer---------------- */
 footer {
-    background-image : url("images/catfooter.gif");
+    background-image : url("assets/images/catfooter.gif");
     background-repeat: no-repeat;
     background-size: 150px;
     background-position: left 1000px bottom;
